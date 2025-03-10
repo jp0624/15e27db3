@@ -1,3 +1,4 @@
+import { formatPhoneNumber } from "../lib/utils";
 import { Call } from "../lib/types";
 import CallDetail from "./CallDetail";
 import { AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
@@ -29,12 +30,12 @@ const CallItem: React.FC<CallItemProps> = ({ call, archiveCall, unarchiveCall })
           {call.direction === "inbound" ? (
             <li>
               <span className="text-fontSize-xxxs">From:</span>{" "}
-              <em className="font-bold text-sm">{call.from}</em>
+              <em className="font-bold text-sm">{formatPhoneNumber(call.from)}</em>
             </li>
           ) : (
             <li>
               <span className="text-fontSize-xxxs">To:</span>{" "}
-              <em className="font-bold text-sm">{call.to}</em>
+              <em className="font-bold text-sm">{formatPhoneNumber(call.to)}</em>
             </li>
           )}
           <li className="mt-1">
