@@ -1,3 +1,4 @@
+import { formatPhoneNumber } from "../lib/utils";
 import { Call } from "../lib/types";
 
 interface CallDetailProps {
@@ -6,7 +7,9 @@ interface CallDetailProps {
 
 function CallDetail({ call }: CallDetailProps) {
   return (
-      <ul className="grid grid-cols-1 w-[100%] md:w-[50%] text-center gap-2 md:grid-cols-2 mb-2 md:mb-0">
+      <ul className="grid grid-cols-1 w-[100%] md:w-[75%] text-center gap-2 md:grid-cols-3 mb-2 md:mb-0">
+        <li>Call From: <span className="font-bold text-sm">{formatPhoneNumber(call.from)}</span></li>
+        <li>Call To: <span className="font-bold text-sm">{formatPhoneNumber(call.to)}</span></li>
         <li>Direction: <span className="font-bold text-sm">{call.direction}</span></li>
         <li>Call Type: <span className="font-bold text-sm">{call.call_type}</span></li>
         <li>
