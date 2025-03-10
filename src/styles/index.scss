@@ -2,6 +2,7 @@
 @use 'tailwindcss/components';
 @use 'tailwindcss/utilities';
 
+@use './mixins.scss';
 @use './body.scss';
 @use './app.scss';
 @use './header.scss';
