@@ -6,7 +6,7 @@ interface CallDetailProps {
 
 function CallDetail({ call }: CallDetailProps) {
   return (
-      <ul className="grid grid-cols-2 w-[50%] gap-2">
+      <ul className="grid grid-cols-1 w-[100%] md:w-[50%] text-center gap-2 md:grid-cols-2 mb-2 md:mb-0">
         <li>Direction: <span className="font-bold text-sm">{call.direction}</span></li>
         <li>Call Type: <span className="font-bold text-sm">{call.call_type}</span></li>
         <li>

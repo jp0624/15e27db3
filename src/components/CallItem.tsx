@@ -53,7 +53,7 @@ const CallItem: React.FC<CallItemProps> = ({ call, archiveCall, unarchiveCall })
 
       <AccordionContent className="border-t p-4 text-sm">
         
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center">
           <CallDetail call={call} />
           <button
                 onClick={() => {
