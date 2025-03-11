@@ -5,6 +5,8 @@
   display: flex;
   height: 100svh;
   font-size: clamp(0.625rem, -1.4706rem + 8.9412vw, 3rem);
+  align-items: center;
+  justify-content: center;
 
   .container {
     max-width: 800px;
