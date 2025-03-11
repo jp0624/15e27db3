@@ -7,10 +7,22 @@
   font-size: clamp(0.625rem, -1.4706rem + 8.9412vw, 3rem);
   align-items: center;
   justify-content: center;
-  
+
   [data-radix-scroll-area-viewport]{
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--border)) transparent;}
+  scrollbar-color: rgb(203, 213, 225, var(--tw-bg-opacity, 1)) transparent;
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar {
+      width: 5px;
+  }
+  }
 
   .container {
     max-width: 800px;
