@@ -30,12 +30,12 @@ const CallItem: React.FC<CallItemProps> = ({ call, archiveCall, unarchiveCall })
           {call.direction === "inbound" ? (
             <li>
               <span className="text-fontSize-xxxs">From:</span>{" "}
-              <em className="font-bold text-sm">{formatPhoneNumber(call.from)}</em>
+              <em className="font-bold text-lg">{formatPhoneNumber(call.from)}</em>
             </li>
           ) : (
             <li>
               <span className="text-fontSize-xxxs">To:</span>{" "}
-              <em className="font-bold text-sm">{formatPhoneNumber(call.to)}</em>
+              <em className="font-bold text-lg">{formatPhoneNumber(call.to)}</em>
             </li>
           )}
           <li className="mt-1">

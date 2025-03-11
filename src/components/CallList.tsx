@@ -35,7 +35,7 @@ const CallList: React.FC<CallListProps> = ({ filter }) => {
       <div className="call-list">
         {Object.entries(groupedCalls).map(([date, callsForDate]) => (
           <div key={date} className="border rounded-lg p-2 mb-5">
-            <h2 className="date-title text-xs py-5 flex justify-center bg-slate-200 items-center h-5 mb-2">
+            <h2 className="date-title py-5 flex text-sm justify-center bg-slate-200 items-center h-5 mb-2">
               {date}
             </h2>
             <Accordion type="single" collapsible className="flex flex-col gap-2">
