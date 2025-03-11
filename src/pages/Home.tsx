@@ -1,6 +1,6 @@
 import CallList from "../components/CallList";
 import { Tabs, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { ScrollArea } from "../components/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "../components/ui/scroll-area"
 import { useCallContext } from "../context/CallContext";
 import { BsArchiveFill } from "react-icons/bs";
 import { BsArchive } from "react-icons/bs";
@@ -28,6 +28,7 @@ const Home: React.FC<HomeProps> = ({ filter, setFilter }) => {
           <CallList filter={"active"} />
         )
       }
+      <ScrollBar orientation="vertical" />
     </ScrollArea>
     <nav className="flex justify-start gap-2 mt-2">
       {filter === "archived" ? (
