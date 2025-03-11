@@ -11,6 +11,7 @@ export type Call = {
   };
   
   export type CallContextType = {
+    isLoading: boolean;
     calls: Call[];
     archivedCalls: Call[];
     fetchCalls: () => void;

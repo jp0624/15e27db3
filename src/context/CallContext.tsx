@@ -12,14 +12,18 @@ type CallProviderProps = {
 export const CallProvider: React.FC<CallProviderProps> = ({ children }) => {
   const [calls, setCalls] = useState<Call[]>([]);
   const [archivedCalls, setArchivedCalls] = useState<Call[]>([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   const fetchCalls = async () => {
+    setIsLoading(true)
     try {
       const response = await fetch(`${BASE_URL}activities`);
       if (!response.ok) throw new Error('Failed to fetch calls');
       const data = await response.json();
+      console.log('data+ ', data)
       setCalls(data.filter((call: Call) => !call.is_archived));
       setArchivedCalls(data.filter((call: Call) => call.is_archived));
+      setIsLoading(false)
     } catch (error) {
       console.error('Error fetching calls:', error);
     }
@@ -99,6 +103,7 @@ export const CallProvider: React.FC<CallProviderProps> = ({ children }) => {
   return (
     <CallContext.Provider
       value={{
+        isLoading,
         calls,
         archivedCalls,
         fetchCalls,
