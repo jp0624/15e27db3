@@ -1,10 +1,9 @@
 import CallList from "../components/CallList";
 import { Tabs, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { ScrollArea, ScrollBar } from "../components/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "../components/ui/scroll-area";
 import { useCallContext } from "../context/CallContext";
 import { BsArchiveFill } from "react-icons/bs";
 import { BsArchive } from "react-icons/bs";
-
 
 interface HomeProps {
   filter: "active" | "archived";
@@ -29,18 +28,17 @@ const Home: React.FC<HomeProps> = ({ filter, setFilter }) => {
           </TabsTrigger>
         </TabsList>
       </Tabs>
-      <ScrollArea className="h-[575px] relative rounded-md border justify-center items-center">
+      <ScrollArea className="h-[75svh] md:h-[575px] relative rounded-md border justify-center items-center">
         {filter === "archived" ? (
-            <CallList filter={"archived"} />
-          ) : (
-            <CallList filter={"active"} />
-          )
-        }
+          <CallList filter={"archived"} />
+        ) : (
+          <CallList filter={"active"} />
+        )}
         {isLoading && (
-            <div className='flex justify-center items-center h-full absolute left-[50%] -translate-x-[50%]'>
-              <div className='animate-spin rounded-full h-24 w-24 border-b-4 border-green-500'></div>
-            </div>
-          )}
+          <div className="flex justify-center items-center h-full absolute left-[50%] -translate-x-[50%]">
+            <div className="animate-spin rounded-full h-24 w-24 border-b-4 border-green-500"></div>
+          </div>
+        )}
         <ScrollBar orientation="vertical" />
       </ScrollArea>
       <nav className="flex justify-start gap-2 mt-2">
